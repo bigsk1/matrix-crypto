@@ -1,0 +1,66 @@
+{
+  "speed": 300,
+  "color": "green",
+  "cryptos": [
+      {
+          "id": "bitcoin",
+          "ticker": "BTC",
+          "name": "Bitcoin"
+      },
+      {
+          "id": "ethereum",
+          "ticker": "ETH",
+          "name": "Ethereum"
+      },
+      {
+          "id": "binancecoin",
+          "ticker": "BNB",
+          "name": "BNB"
+      },
+      {
+          "id": "solana",
+          "ticker": "SOL",
+          "name": "Solana"
+      },
+      {
+          "id": "cardano",
+          "ticker": "ADA",
+          "name": "Cardano"
+      },
+      {
+          "id": "avalanche-2",
+          "ticker": "AVAX",
+          "name": "Avalanche"
+      },
+      {
+          "id": "dogecoin",
+          "ticker": "DOGE",
+          "name": "Dogecoin"
+      },
+      {
+          "id": "polkadot",
+          "ticker": "DOT",
+          "name": "Polkadot"
+      },
+      {
+          "id": "matic-network",
+          "ticker": "MATIC",
+          "name": "Polygon"
+      },
+      {
+          "id": "shiba-inu",
+          "ticker": "SHIB",
+          "name": "Shiba Inu"
+      },
+      {
+          "id": "litecoin",
+          "ticker": "LTC",
+          "name": "Litecoin"
+      },
+      {
+          "id": "uniswap",
+          "ticker": "UNI",
+          "name": "Uniswap"
+      }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+    "speed": 300,
+    "color": "green",
+    "cryptos": [
+        {
+            "id": "ethereum",
+            "ticker": "ETH",
+            "name": "Ethereum"
+        },
+        {
+            "id": "binancecoin",
+            "ticker": "BNB",
+            "name": "BNB"
+        },
+        {
+            "id": "staked-ether",
+            "ticker": "STETH",
+            "name": "Lido Staked Ether"
+        },
+        {
+            "id": "chainlink",
+            "ticker": "LINK",
+            "name": "Chainlink"
+        },
+        {
+            "id": "matic-network",
+            "ticker": "MATIC",
+            "name": "Polygon"
+        },
+        {
+            "id": "the-open-network",
+            "ticker": "TON",
+            "name": "Toncoin"
+        },
+        {
+            "id": "wrapped-bitcoin",
+            "ticker": "WBTC",
+            "name": "Wrapped Bitcoin"
+        },
+        {
+            "id": "shiba-inu",
+            "ticker": "SHIB",
+            "name": "Shiba Inu"
+        },
+        {
+            "id": "dai",
+            "ticker": "DAI",
+            "name": "Dai"
+        },
+        {
+            "id": "uniswap",
+            "ticker": "UNI",
+            "name": "Uniswap"
+        },
+        {
+            "id": "leo-token",
+            "ticker": "LEO",
+            "name": "LEO Token"
+        },
+        {
+            "id": "immutable-x",
+            "ticker": "IMX",
+            "name": "Immutable"
+        },
+        {
+            "id": "injective-protocol",
+            "ticker": "INJ",
+            "name": "Injective"
+        },
+        {
+            "id": "okb",
+            "ticker": "OKB",
+            "name": "OKB"
+        },
+        {
+            "id": "first-digital-usd",
+            "ticker": "FDUSD",
+            "name": "First Digital USD"
+        },
+        {
+            "id": "lido-dao",
+            "ticker": "LDO",
+            "name": "Lido DAO"
+        },
+        {
+            "id": "arbitrum",
+            "ticker": "ARB",
+            "name": "Arbitrum"
+        },
+        {
+            "id": "crypto-com-chain",
+            "ticker": "CRO",
+            "name": "Cronos"
+        }
+    ]
+}

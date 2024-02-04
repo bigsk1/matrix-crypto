@@ -1,0 +1,101 @@
+Matrix Crypto Display -offline version
+=================================
+
+
+This application provides a matrix-style display of cryptocurrency names within the terminal. It's a simplified version that focuses on presenting the names without real-time price updates
+
+
+Windows and Linux Terminal using Python 3.6+
+-----------
+Quick start
+-----------
+
+Windows
+run_windows.bat
+
+Linux/MacOS
+chmod +x run_linux.sh
+./run_linux.sh
+
+if you have trouble running then run  sed -i 's/\r$//' ./run_linux.sh
+and try again  ./run_linux.sh
+
+-------
+Manual
+-------
+
+pip install -r requirements.txt 
+ or on Linux just run pip install request
+ or on windows run pip install windows-curses requests
+
+------
+Usage 
+------
+
+python matrix_crypto.py
+
+---------
+Features
+---------
+
+    Display Cryptocurrency Names: Shows a list of cryptocurrency names scrolling down the terminal in a matrix-style effect.
+    Customizable Speed: Allows users to adjust the scrolling speed of the names for a personalized experience.
+    Color Customization: Users can select the display color to suit their terminal theme or personal taste.
+	
+	Options
+
+    --speed SPEED: Sets the speed of the falling text, where a higher value results in slower movement. Default is 300.
+    --color COLOR: Sets the color of the falling text. Options include green, red, white, blue, yellow, cyan, and magenta. The default color is green.
+	
+	
+	python matrix_crypto.py [--speed SPEED] [--color COLOR]
+
+
+No Real-time Prices
+
+This version of the application does not fetch or display real-time cryptocurrency prices, focusing solely on the visual presentation of cryptocurrency names. It's designed for users who prefer a less dynamic, purely aesthetic terminal experience.
+Customizing the Cryptocurrency List
+
+To customize the list of cryptocurrencies displayed:
+
+    Edit the cryptos_config.json file.
+    Add or remove entries under the "cryptos" key, specifying the "name" for each cryptocurrency.
+    Save the changes and rerun the application to see the updated list.
+	
+---------
+Log File:
+---------
+
+The application generates a log file (matrix_crypto.log) to store runtime information, errors, and other log messages. The log is rotated every 10 days to prevent excessive file size.
+
+------------------------
+Exiting the Application:
+------------------------
+
+TO EXIT THE APPLICATION, PRESS CTRL+C AT ANY TIME.
+
+----------------------
+Setup and Start script
+----------------------
+
+When you run the setup script (run_linux.sh for Unix-like systems or run_windows.bat for Windows), it automatically creates and activates a Python virtual environment in your project directory. 
+
+The script will install all necessary packages listed in requirements.txt into this environment, making it easy to manage project-specific dependencies and maintain a clean development setup. 
+
+For subsequent uses, you can activate the virtual environment manually with source venv/bin/activate (Unix-like systems) or .\venv\Scripts\activate (Windows) to run the project or additional Python commands.
+
+--------------------
+License Information:
+--------------------
+
+Matrix Crypto Display
+Copyright (c) bigsk1 2024
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+If you enjoy using please support my work, thanks @bigsk1_com
+BTC Tips: bc1qeyzfq7qvmpmye0j9jrg5zys2vle36gm37ln8j04ahv6q9ymp8awq4ee0td

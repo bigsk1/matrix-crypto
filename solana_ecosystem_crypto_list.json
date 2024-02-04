@@ -1,0 +1,96 @@
+{
+    "speed": 300,
+    "color": "green",
+    "cryptos": [
+        {
+            "id": "solana",
+            "ticker": "SOL",
+            "name": "Solana"
+        },
+        {
+            "id": "chainlink",
+            "ticker": "LINK",
+            "name": "Chainlink"
+        },
+        {
+            "id": "render-token",
+            "ticker": "RNDR",
+            "name": "Render"
+        },
+        {
+            "id": "the-graph",
+            "ticker": "GRT",
+            "name": "The Graph"
+        },
+        {
+            "id": "helium",
+            "ticker": "HNT",
+            "name": "Helium"
+        },
+        {
+            "id": "frax-share",
+            "ticker": "FXS",
+            "name": "Frax Share"
+        },
+        {
+            "id": "jupiter-exchange-solana",
+            "ticker": "JUP",
+            "name": "Jupiter"
+        },
+        {
+            "id": "pyth-network",
+            "ticker": "PYTH",
+            "name": "Pyth Network"
+        },
+        {
+            "id": "frax",
+            "ticker": "FRAX",
+            "name": "Frax"
+        },
+        {
+            "id": "bonk",
+            "ticker": "BONK",
+            "name": "Bonk"
+        },
+        {
+            "id": "woo-network",
+            "ticker": "WOO",
+            "name": "WOO"
+        },
+        {
+            "id": "msol",
+            "ticker": "MSOL",
+            "name": "Marinade staked SOL"
+        },
+        {
+            "id": "stepn",
+            "ticker": "GMT",
+            "name": "GMT"
+        },
+        {
+            "id": "rollbit-coin",
+            "ticker": "RLB",
+            "name": "Rollbit Coin"
+        },
+        {
+            "id": "raydium",
+            "ticker": "RAY",
+            "name": "Raydium"
+        },
+        {
+            "id": "dogwifcoin",
+            "ticker": "WIF",
+            "name": "dogwifhat"
+        },
+        {
+            "id": "helium-mobile",
+            "ticker": "MOBILE",
+            "name": "Helium Mobile"
+        },
+        {
+            "id": "autonolas",
+            "ticker": "OLAS",
+            "name": "Autonolas"
+        }
+    ]
+}

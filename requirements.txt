@@ -1,0 +1,9 @@
+
+# This file contains the necessary packages for running the Matrix Crypto Display Application.
+
+# Requests is used for fetching cryptocurrency prices from the CoinGecko API.
+
+requests
+windows-curses; platform_system == "Windows"
+
+

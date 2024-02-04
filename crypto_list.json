@@ -1,0 +1,96 @@
+{
+    "speed": 300,
+    "color": "green",
+    "cryptos": [
+        {
+            "id": "bitcoin",
+            "ticker": "BTC",
+            "name": "Bitcoin"
+        },
+        {
+            "id": "ethereum",
+            "ticker": "ETH",
+            "name": "Ethereum"
+        },
+        {
+            "id": "binancecoin",
+            "ticker": "BNB",
+            "name": "BNB"
+        },
+        {
+            "id": "solana",
+            "ticker": "SOL",
+            "name": "Solana"
+        },
+        {
+            "id": "ripple",
+            "ticker": "XRP",
+            "name": "XRP"
+        },
+        {
+            "id": "staked-ether",
+            "ticker": "STETH",
+            "name": "Lido Staked Ether"
+        },
+        {
+            "id": "cardano",
+            "ticker": "ADA",
+            "name": "Cardano"
+        },
+        {
+            "id": "avalanche-2",
+            "ticker": "AVAX",
+            "name": "Avalanche"
+        },
+        {
+            "id": "dogecoin",
+            "ticker": "DOGE",
+            "name": "Dogecoin"
+        },
+        {
+            "id": "chainlink",
+            "ticker": "LINK",
+            "name": "Chainlink"
+        },
+        {
+            "id": "tron",
+            "ticker": "TRX",
+            "name": "TRON"
+        },
+        {
+            "id": "polkadot",
+            "ticker": "DOT",
+            "name": "Polkadot"
+        },
+        {
+            "id": "matic-network",
+            "ticker": "MATIC",
+            "name": "Polygon"
+        },
+        {
+            "id": "the-open-network",
+            "ticker": "TON",
+            "name": "Toncoin"
+        },
+        {
+            "id": "wrapped-bitcoin",
+            "ticker": "WBTC",
+            "name": "Wrapped Bitcoin"
+        },
+        {
+            "id": "internet-computer",
+            "ticker": "ICP",
+            "name": "Internet Computer"
+        },
+        {
+            "id": "shiba-inu",
+            "ticker": "SHIB",
+            "name": "Shiba Inu"
+        },
+        {
+            "id": "litecoin",
+            "ticker": "LTC",
+            "name": "Litecoin"
+        }
+    ]
+}
