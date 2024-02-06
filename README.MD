@@ -15,10 +15,10 @@ Features
 
 [matrix_crypto video](https://youtu.be/JbEp2Fjlzb0)
 
-## Windows and Linux Terminal using Python 3.6+
+## Windows and Linux Terminal using Python 3.6 to 3.11.7
 
 Download python if you don't already have it 
-[Python Download](https://www.python.org/downloads/)
+[Python Download](https://www.python.org/downloads/release/python-3117/)
 
 ## Installation
 
@@ -35,6 +35,11 @@ cd matrix-crypto
 ### Windows
 
 Double click the run_windows.bat file
+
+if having trouble windows users might need to
+manually run pip install windows_curses in venv
+or download and use miniconda with python=3.11.4
+
 
 ### Linux/MacOS
 
