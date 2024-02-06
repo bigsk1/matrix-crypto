@@ -4,6 +4,6 @@
 # Requests is used for fetching cryptocurrency prices from the CoinGecko API.
 
 requests
-windows_curses; platform_system == "Windows"
+windows-curses; platform_system == "Windows"
 
 
