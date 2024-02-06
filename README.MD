@@ -37,8 +37,8 @@ cd matrix-crypto
 Double click the run_windows.bat file
 
 if having trouble windows users might need to
-manually run pip install windows_curses in venv
-or download and use miniconda with python=3.11.4
+manually download and use miniconda with python=3.11.4
+and run pip install -r requirements.txt
 
 
 ### Linux/MacOS
