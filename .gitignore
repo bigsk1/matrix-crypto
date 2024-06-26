@@ -104,6 +104,7 @@ cython_debug/
 
 # Other files and folders to ignore
 *.log
+*.log.*
 *.sqlite3
 *.dat
 *.db
