@@ -11,11 +11,13 @@ Features
 -   Custom scripts for getting latest crypto ecosystem lists, Top 20 Solana or Ethereum tokens
 
 
-[![Watch the Video](img/mc1.png)](https://www.youtube.com/watch?v=JbEp2Fjlzb0)
+[![Watch the video](https://img.youtube.com/vi/HOkN3hmoXzs/maxresdefault.jpg)](https://youtu.be/HOkN3hmoXzs)
 
-[matrix_crypto video](https://youtu.be/JbEp2Fjlzb0)
+Click on the thumbnail to open the video☝️
 
-## Windows and Linux Terminal using Python 3.6 to 3.11.7
+
+
+## Windows and Linux Terminal using Python 3.8 +
 
 Download python if you don't already have it 
 [Python Download](https://www.python.org/downloads/release/python-3117/)
@@ -151,3 +153,4 @@ python matrix_crypto.py [--speed SPEED] [--color COLOR]
 ```
 
 
+![matrix-crypto](/img/matrix.png)
