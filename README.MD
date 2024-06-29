@@ -85,9 +85,9 @@ python matrix_crypto.py
 CTL+C to Exit
 
 
-### Add to bashrc or zshrc ( optional )
+### Add to bashrc or zshrc ( optional for linux )
 
-What to type matrixc and start the script? cmatrix but for crypto!!!
+Want to type matrixc and start the script? cmatrix but for crypto!!!
 
 Ensure your script is executable. Navigate to the directory where your matrix_crypto.py script is located and run:
 
