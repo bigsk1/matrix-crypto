@@ -1,7 +1,9 @@
 
 ## Matrix Crypto Terminal Display 💻
 
-The Matrix Crypto Display is a Python-based terminal application that provides a visually appealing display of cryptocurrency information in a matrix-style animation. This project offers two main functionalities: one version displays real-time cryptocurrency prices, and another displays cryptocurrency names without prices for a simplified, aesthetic experience.
+The Matrix Crypto Display is a Python-based terminal application that provides a visually appealing display of cryptocurrency information in a matrix-style animation. This project offers two main functionalities: one version displays real-time cryptocurrency prices, and another displays cryptocurrency names without prices for a simplified, aesthetic experience. 
+
+### Think cmatrix but with crypto prices! 
 
 ### Features
 
@@ -176,8 +178,6 @@ Run the simplified version that displays only cryptocurrency names under the `of
 python matrix_crypto.py [--bg-color BG_COLOR] [--crypto-color CRYPTO_COLOR]
 ```
 
-![matrix-crypto](/img/matrix.png)
-
 
 ---
 
@@ -281,3 +281,5 @@ python matrix_crypto.py --bg-color cyan --crypto-color red
 ```bash
 python matrix_crypto.py --bg-color magenta --crypto-color blue
 ```
+
+![matrix-crypto](/img/matrix.png)
