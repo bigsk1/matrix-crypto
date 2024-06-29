@@ -1,29 +1,3 @@
-"""
-Matrix Crypto Display Script
-Copyright (c) bigsk1 2024
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-If you enjoy using please support my work, thanks @bigsk1_com
-BTC Tips: bc1qeyzfq7qvmpmye0j9jrg5zys2vle36gm37ln8j04ahv6q9ymp8awq4ee0td
-"""
-
 import json
 import curses
 import time
@@ -43,13 +17,24 @@ SETTINGS = {
     'CRYPTO_DISPLAY_CHANCE': 0.1,  # Chance of new crypto display appearing each frame.
     'FADE_LENGTH': 0,  # Length of fade effect at top and bottom in number of characters.
     'BACKGROUND_INTENSITY_LEVELS': 3,  # Number of intensity levels for background.
-    'CRYPTO_FALL_SPEED_RANGE': (0.1, 0.3),  # Min and max fall speed for crypto displays in seconds.
+    'CRYPTO_FALL_SPEED_RANGE': (0.1, 0.2),  # Min and max fall speed for crypto displays in seconds.
     'BACKGROUND_CHANGE_CHANCE': 0.2,  # Chance of a background character changing each update.
     'BACKGROUND_FALL_SPEED_RANGE': (0.06, 0.1),  # Min and max fall speed for background characters in seconds.
     'BACKGROUND_COLUMN_LENGTH_RANGE': (0.3, 0.7),  # Min and max length of background columns as a fraction of screen height.
     'BACKGROUND_COLUMN_GAP_RANGE': (0.2, 0.3),  # Min and max gap between columns as a fraction of screen height.
     'LEAD_CHAR_COLOR': curses.COLOR_WHITE,  # Color of the leading character in each column.
     'LEAD_CHAR_CHANCE': 1,  # Chance of a new leading character appearing when the column updates.
+    'CRYPTO_COLOR': 'white',  # Default color for crypto tickers
+}
+
+COLOR_MAP = {
+    'red': curses.COLOR_RED,
+    'green': curses.COLOR_GREEN,
+    'blue': curses.COLOR_BLUE,
+    'yellow': curses.COLOR_YELLOW,
+    'cyan': curses.COLOR_CYAN,
+    'magenta': curses.COLOR_MAGENTA,
+    'white': curses.COLOR_WHITE,
 }
 
 log_file = 'matrix_crypto.log'
@@ -60,10 +45,10 @@ handler = TimedRotatingFileHandler(log_file, when="D", interval=10, backupCount=
 handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
 
+# Update argument parser
 parser = argparse.ArgumentParser(description="Matrix-style crypto ticker display.")
-parser.add_argument('--speed', type=float, default=0.1, help='Speed of the falling text, lower is faster.')
-parser.add_argument('--color', type=str, default='green', help='Color of the falling text (e.g., green, red, white, blue, yellow, cyan, magenta).')
-parser.add_argument('--bold', action='store_true', help='Display text in bold.')
+parser.add_argument('--bg-color', type=str, default='green', help='Color of the falling background text (e.g., green, red, white, blue, yellow, cyan, magenta).')
+parser.add_argument('--crypto-color', type=str, help='Color of the crypto tickers (e.g., white, yellow, cyan). Overrides SETTINGS["CRYPTO_COLOR"].')
 parser.add_argument('--solana', action='store_true', help='Use the Solana ecosystem crypto list.')
 parser.add_argument('--eth', action='store_true', help='Use the Ethereum ecosystem crypto list.')
 args = parser.parse_args()
@@ -100,14 +85,16 @@ def update_prices_periodically(crypto_list, config_name, update_interval=90):
         fetch_current_prices(crypto_list, config_name)
         time.sleep(update_interval)
 
-# Modify the init_color_pairs function to include the lead character color
-def init_color_pairs():
+def init_color_pairs(bg_color, crypto_color):
     curses.start_color()
     curses.use_default_colors()
-    curses.init_pair(1, curses.COLOR_GREEN, -1)
-    for i in range(2, 9):  # White to green gradient
-        curses.init_pair(i, i + 7, -1)  # 9 to 16 are bright white to bright green
-    curses.init_pair(9, SETTINGS['LEAD_CHAR_COLOR'], -1)  # Lead character color
+    
+    bg_color_code = COLOR_MAP.get(bg_color.lower(), curses.COLOR_GREEN)
+    crypto_color_code = COLOR_MAP.get(crypto_color.lower(), curses.COLOR_WHITE)
+    
+    curses.init_pair(1, bg_color_code, -1)
+    curses.init_pair(9, curses.COLOR_WHITE, -1)  # Lead character color
+    curses.init_pair(10, crypto_color_code, -1)  # Crypto ticker color
 
 class MatrixColumn:
     def __init__(self, height):
@@ -196,7 +183,9 @@ def main(stdscr):
     config = load_cryptos(config_filename)
     crypto_list = config['cryptos']
 
-    init_color_pairs()
+    # Use command-line argument for crypto color if provided, otherwise use SETTINGS
+    crypto_color = args.crypto_color if args.crypto_color else SETTINGS['CRYPTO_COLOR']
+    init_color_pairs(args.bg_color, crypto_color)
 
     curses.curs_set(0)  # Hide the cursor
     stdscr.nodelay(1)   # Make getch() non-blocking
@@ -251,14 +240,7 @@ def main(stdscr):
                     for i, char in enumerate(text):
                         y = display.y + i
                         if 0 <= y < max_y:
-                            fade_length = SETTINGS['FADE_LENGTH']
-                            if y < fade_length:
-                                color = curses.color_pair(min(8, 2 + y))
-                            elif y > max_y - fade_length:
-                                color = curses.color_pair(min(8, 2 + (max_y - y)))
-                            else:
-                                color = curses.color_pair(8)
-                            attr = color | curses.A_BOLD
+                            attr = curses.color_pair(10) | curses.A_BOLD
                             safe_addstr(stdscr, y, display.x, char, attr)
 
             # Add new crypto display if needed

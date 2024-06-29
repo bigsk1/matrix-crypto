@@ -1,6 +1,4 @@
 {
-    "speed": 300,
-    "color": "green",
     "cryptos": [
         {
             "id": "bitcoin",

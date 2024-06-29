@@ -7,7 +7,7 @@ Description:
 This application displays real-time cryptocurrency prices in a matrix-style animation within the terminal. It fetches current prices from the CoinGecko API and presents them in a visually appealing, continuously scrolling format. Api updates every 90 seconds
 
 
-Windows and Linux Terminal using Python 3.6+
+Windows and Linux Terminal using Python 3.8+
 -----------
 Quick start
 -----------
@@ -51,12 +51,10 @@ python ethereum_crypto_list.py = gets top 20 ethereum tokens by marketcap
 
 2. Start the application by running: python matrix_crypto.py or if needed python3 matrix_crypto.py
 
-3. Optional command-line arguments:  python matrix_crypto.py --help
-   - --speed [integer]: Sets the speed of the falling text, higher is slower. Default is 300.
-   - --color [color name]: Sets the color of the falling text (e.g., green, red, blue). Default is green.
-   - --bold: Display text in bold.
-   - --solana   crypto ecosystem list.json, i.e solana or eth
-   example: python matrix_crypto.py --color white --bold --eth
+3. Command-line Options
+
+- --bg-color: Adjust the color of the falling background text (e.g., green, red, blue).
+- --crypto-color: Choose the color of the crypto tickers (e.g., white, yellow, cyan).
 
 ---------
 Log File:

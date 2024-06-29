@@ -1,6 +1,4 @@
 {
-    "speed": 300,
-    "color": "green",
     "cryptos": [
         {
             "id": "ethereum",
@@ -18,24 +16,9 @@
             "name": "Lido Staked Ether"
         },
         {
-            "id": "chainlink",
-            "ticker": "LINK",
-            "name": "Chainlink"
-        },
-        {
-            "id": "matic-network",
-            "ticker": "MATIC",
-            "name": "Polygon"
-        },
-        {
             "id": "the-open-network",
             "ticker": "TON",
             "name": "Toncoin"
-        },
-        {
-            "id": "wrapped-bitcoin",
-            "ticker": "WBTC",
-            "name": "Wrapped Bitcoin"
         },
         {
             "id": "shiba-inu",
@@ -43,9 +26,14 @@
             "name": "Shiba Inu"
         },
         {
-            "id": "dai",
-            "ticker": "DAI",
-            "name": "Dai"
+            "id": "wrapped-bitcoin",
+            "ticker": "WBTC",
+            "name": "Wrapped Bitcoin"
+        },
+        {
+            "id": "chainlink",
+            "ticker": "LINK",
+            "name": "Chainlink"
         },
         {
             "id": "uniswap",
@@ -58,39 +46,49 @@
             "name": "LEO Token"
         },
         {
-            "id": "immutable-x",
-            "ticker": "IMX",
-            "name": "Immutable"
+            "id": "near",
+            "ticker": "NEAR",
+            "name": "NEAR Protocol"
         },
         {
-            "id": "injective-protocol",
-            "ticker": "INJ",
-            "name": "Injective"
+            "id": "matic-network",
+            "ticker": "MATIC",
+            "name": "Polygon"
         },
         {
-            "id": "okb",
-            "ticker": "OKB",
-            "name": "OKB"
+            "id": "dai",
+            "ticker": "DAI",
+            "name": "Dai"
         },
         {
-            "id": "first-digital-usd",
-            "ticker": "FDUSD",
-            "name": "First Digital USD"
+            "id": "pepe",
+            "ticker": "PEPE",
+            "name": "Pepe"
         },
         {
-            "id": "lido-dao",
-            "ticker": "LDO",
-            "name": "Lido DAO"
+            "id": "wrapped-eeth",
+            "ticker": "WEETH",
+            "name": "Wrapped eETH"
         },
         {
-            "id": "arbitrum",
-            "ticker": "ARB",
-            "name": "Arbitrum"
+            "id": "ethena-usde",
+            "ticker": "USDE",
+            "name": "Ethena USDe"
         },
         {
-            "id": "crypto-com-chain",
-            "ticker": "CRO",
-            "name": "Cronos"
+            "id": "fetch-ai",
+            "ticker": "FET",
+            "name": "Fetch.ai"
+        },
+        {
+            "id": "renzo-restaked-eth",
+            "ticker": "EZETH",
+            "name": "Renzo Restaked ETH"
+        },
+        {
+            "id": "render-token",
+            "ticker": "RNDR",
+            "name": "Render"
         }
     ]
 }

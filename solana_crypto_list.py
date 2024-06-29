@@ -17,10 +17,8 @@ def fetch_solana_ecosystem_cryptos():
         print(f"Failed to fetch Solana ecosystem coins: {response.status_code}")
         return []
 
-def save_crypto_list(crypto_data, filename="solana_ecosystem_crypto_list.json", speed=300, color="green"):
+def save_crypto_list(crypto_data, filename="solana_ecosystem_crypto_list.json"):
     config = {
-        "speed": speed,
-        "color": color,
         "cryptos": [{
             "id": crypto['id'],
             "ticker": crypto['symbol'].upper(),

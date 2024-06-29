@@ -42,13 +42,10 @@ Features
     Customizable Speed: Allows users to adjust the scrolling speed of the names for a personalized experience.
     Color Customization: Users can select the display color to suit their terminal theme or personal taste.
 	
-	Options
+	Command-line Options
 
-    --speed SPEED: Sets the speed of the falling text, where a higher value results in slower movement. Default is 300.
-    --color COLOR: Sets the color of the falling text. Options include green, red, white, blue, yellow, cyan, and magenta. The default color is green.
-	
-	
-	python matrix_crypto.py [--speed SPEED] [--color COLOR]
+    - --bg-color: Adjust the color of the falling background text (e.g., green, red, blue).
+    - --crypto-color: Choose the color of the crypto tickers (e.g., white, yellow, cyan).
 
 
 No Real-time Prices

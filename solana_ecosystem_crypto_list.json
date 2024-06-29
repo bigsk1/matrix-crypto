@@ -1,6 +1,4 @@
 {
-    "speed": 300,
-    "color": "green",
     "cryptos": [
         {
             "id": "solana",
@@ -18,34 +16,14 @@
             "name": "Render"
         },
         {
+            "id": "dogwifcoin",
+            "ticker": "WIF",
+            "name": "dogwifhat"
+        },
+        {
             "id": "the-graph",
             "ticker": "GRT",
             "name": "The Graph"
-        },
-        {
-            "id": "helium",
-            "ticker": "HNT",
-            "name": "Helium"
-        },
-        {
-            "id": "frax-share",
-            "ticker": "FXS",
-            "name": "Frax Share"
-        },
-        {
-            "id": "jupiter-exchange-solana",
-            "ticker": "JUP",
-            "name": "Jupiter"
-        },
-        {
-            "id": "pyth-network",
-            "ticker": "PYTH",
-            "name": "Pyth Network"
-        },
-        {
-            "id": "frax",
-            "ticker": "FRAX",
-            "name": "Frax"
         },
         {
             "id": "bonk",
@@ -53,24 +31,49 @@
             "name": "Bonk"
         },
         {
-            "id": "woo-network",
-            "ticker": "WOO",
-            "name": "WOO"
+            "id": "pyth-network",
+            "ticker": "PYTH",
+            "name": "Pyth Network"
+        },
+        {
+            "id": "jupiter-exchange-solana",
+            "ticker": "JUP",
+            "name": "Jupiter"
+        },
+        {
+            "id": "zebec-protocol",
+            "ticker": "ZBC",
+            "name": "Zebec Protocol"
         },
         {
             "id": "msol",
             "ticker": "MSOL",
-            "name": "Marinade staked SOL"
+            "name": "Marinade Staked SOL"
         },
         {
-            "id": "stepn",
-            "ticker": "GMT",
-            "name": "GMT"
+            "id": "book-of-meme",
+            "ticker": "BOME",
+            "name": "BOOK OF MEME"
         },
         {
-            "id": "rollbit-coin",
-            "ticker": "RLB",
-            "name": "Rollbit Coin"
+            "id": "frax",
+            "ticker": "FRAX",
+            "name": "Frax"
+        },
+        {
+            "id": "wormhole",
+            "ticker": "W",
+            "name": "Wormhole"
+        },
+        {
+            "id": "popcat",
+            "ticker": "POPCAT",
+            "name": "Popcat"
+        },
+        {
+            "id": "helium",
+            "ticker": "HNT",
+            "name": "Helium"
         },
         {
             "id": "raydium",
@@ -78,19 +81,9 @@
             "name": "Raydium"
         },
         {
-            "id": "dogwifcoin",
-            "ticker": "WIF",
-            "name": "dogwifhat"
-        },
-        {
-            "id": "helium-mobile",
-            "ticker": "MOBILE",
-            "name": "Helium Mobile"
-        },
-        {
-            "id": "autonolas",
-            "ticker": "OLAS",
-            "name": "Autonolas"
+            "id": "woo-network",
+            "ticker": "WOO",
+            "name": "WOO"
         }
     ]
 }
