@@ -84,6 +84,36 @@ python matrix_crypto.py
 ```
 CTL+C to Exit
 
+
+### Add to bashrc or zshrc ( optional )
+
+What to type matrixc and start the script? cmatrix but for crypto!!!
+
+Ensure your script is executable. Navigate to the directory where your matrix_crypto.py script is located and run:
+
+```bash
+chmod +x matrix_crypto.py
+```
+
+Open your .zshrc or .bashrc file in a text editor and update your path:
+
+```bash
+alias matrixc='cd /path/to/matrix-crypto && python matrix_crypto.py'
+```
+
+Replace /path/to/matrix-crypto/matrix_crypto.py with the actual path to your script. 
+
+```bash
+source ~/.zshrc
+```
+
+Now you can run your script from anywhere in the terminal by typing:
+
+```bash
+matrixc
+```
+
+
 ## Advanced Usage
 
 Run the application:
