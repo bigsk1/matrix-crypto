@@ -11,17 +11,17 @@ import requests
 # User-configurable settings
 SETTINGS = {
     'ANIMATION_SPEED': 0.01,  # Lower is faster, higher is slower. This is the delay between frames in seconds.
-    'BACKGROUND_PATTERN': [1, 2, 3, 2],  # Gap widths pattern.
+    'BACKGROUND_PATTERN': [1, 2, 3, 1],  # Gap widths pattern.
     'BACKGROUND_CHARS': 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/',
-    'CRYPTO_DISPLAY_COUNT': 4,  # Maximum number of crypto prices displayed simultaneously.
-    'CRYPTO_DISPLAY_CHANCE': 0.1,  # Chance of new crypto display appearing each frame.
+    'CRYPTO_DISPLAY_COUNT': 3,  # Maximum number of crypto prices displayed simultaneously.
+    'CRYPTO_DISPLAY_CHANCE': 0.13,  # Chance of new crypto display appearing each frame.
     'FADE_LENGTH': 0,  # Length of fade effect at top and bottom in number of characters.
-    'BACKGROUND_INTENSITY_LEVELS': 3,  # Number of intensity levels for background.
-    'CRYPTO_FALL_SPEED_RANGE': (0.1, 0.2),  # Min and max fall speed for crypto displays in seconds.
-    'BACKGROUND_CHANGE_CHANCE': 0.2,  # Chance of a background character changing each update.
+    'BACKGROUND_INTENSITY_LEVELS': 5,  # Number of intensity levels for background.
+    'CRYPTO_FALL_SPEED_RANGE': (0.12, 0.16),  # Min and max fall speed for crypto displays in seconds.
+    'BACKGROUND_CHANGE_CHANCE': 0.5,  # Chance of a background character changing each update.
     'BACKGROUND_FALL_SPEED_RANGE': (0.06, 0.1),  # Min and max fall speed for background characters in seconds.
-    'BACKGROUND_COLUMN_LENGTH_RANGE': (0.3, 0.7),  # Min and max length of background columns as a fraction of screen height.
-    'BACKGROUND_COLUMN_GAP_RANGE': (0.2, 0.3),  # Min and max gap between columns as a fraction of screen height.
+    'BACKGROUND_COLUMN_LENGTH_RANGE': (0.3, 0.6),  # Min and max length of background columns as a fraction of screen height.
+    'BACKGROUND_COLUMN_GAP_RANGE': (0.2, 0.4),  # Min and max gap between columns as a fraction of screen height.
     'LEAD_CHAR_COLOR': curses.COLOR_WHITE,  # Color of the leading character in each column.
     'LEAD_CHAR_CHANCE': 1,  # Chance of a new leading character appearing when the column updates.
     'CRYPTO_COLOR': 'white',  # Default color for crypto tickers
@@ -70,7 +70,7 @@ def fetch_current_prices(crypto_list, config_name):
     base_url = "https://api.coingecko.com/api/v3/simple/price"
     params = {'ids': ','.join(crypto_ids), 'vs_currencies': 'usd'}
     try:
-        response = requests.get(base_url, params=params, timeout=10)
+        response = requests.get(base_url, params=params, timeout=20)
         prices = response.json()
         for crypto in crypto_list:
             if crypto['id'] in prices:
@@ -80,7 +80,7 @@ def fetch_current_prices(crypto_list, config_name):
     except Exception as e:
         logger.error(f"Error fetching prices for {config_name}: {e}")
 
-def update_prices_periodically(crypto_list, config_name, update_interval=90):
+def update_prices_periodically(crypto_list, config_name, update_interval=120):
     while True:
         fetch_current_prices(crypto_list, config_name)
         time.sleep(update_interval)
@@ -171,7 +171,7 @@ class CryptoDisplay:
         return self.y > self.max_y + len(self.get_display_text())
 
     def get_display_text(self):
-        return f"{self.crypto['ticker']} ${self.crypto.get('price', 'N/A')}".upper()
+        return f"{self.crypto['ticker']} ${self.crypto.get('price', 'N/A')}".upper()  # the space after $ allows for a gap between $ and price number
 
 def safe_addstr(stdscr, y, x, text, attr):
     try:
@@ -224,7 +224,17 @@ def main(stdscr):
                         if is_lead:
                             attr = curses.color_pair(9) | curses.A_BOLD
                         else:
-                            attr = curses.color_pair(1) | curses.A_DIM * intensity
+                            fade_length = SETTINGS['FADE_LENGTH']
+                            if fade_length > 0:
+                                if y < fade_length:
+                                    color = curses.color_pair(min(8, 2 + y))
+                                elif y > max_y - fade_length:
+                                    color = curses.color_pair(min(8, 2 + (max_y - y)))
+                                else:
+                                    color = curses.color_pair(1)
+                                attr = color | curses.A_DIM * intensity
+                            else:
+                                attr = curses.color_pair(1) | curses.A_DIM * intensity
                         safe_addstr(stdscr, y, x, char, attr)
                 x += 1
                 for _ in range(SETTINGS['BACKGROUND_PATTERN'][x % len(SETTINGS['BACKGROUND_PATTERN'])]):
@@ -240,7 +250,17 @@ def main(stdscr):
                     for i, char in enumerate(text):
                         y = display.y + i
                         if 0 <= y < max_y:
-                            attr = curses.color_pair(10) | curses.A_BOLD
+                            fade_length = SETTINGS['FADE_LENGTH']
+                            if fade_length > 0:
+                                if y < fade_length:
+                                    color = curses.color_pair(min(8, 2 + y))
+                                elif y > max_y - fade_length:
+                                    color = curses.color_pair(min(8, 2 + (max_y - y)))
+                                else:
+                                    color = curses.color_pair(10)
+                                attr = color | curses.A_BOLD
+                            else:
+                                attr = curses.color_pair(10) | curses.A_BOLD
                             safe_addstr(stdscr, y, display.x, char, attr)
 
             # Add new crypto display if needed
