@@ -23,6 +23,10 @@ Click on the thumbnail to open the video☝️
 Download python if you don't already have it
 [Python Download](https://www.python.org/downloads/release/python-3117/)
 
+
+Is best run on linux terminal as window curses seems to be lacking some features but still works. 
+
+
 ## Installation
 
 Clone the Repository
