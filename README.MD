@@ -14,9 +14,9 @@ The Matrix Crypto Display is a Python-based terminal application that provides a
 - Command-line Options: Includes options for adjusting display settings directly through command-line arguments.
 - Custom scripts for getting the latest crypto ecosystem lists, Top 20 Solana or Ethereum tokens.
 
-[![Watch the video](https://img.youtube.com/vi/HOkN3hmoXzs/maxresdefault.jpg)](https://youtu.be/HOkN3hmoXzs)
+https://github.com/user-attachments/assets/2e1acab8-d4d3-48ca-a68d-1d791fe7f9b9
 
-Click on the thumbnail to open the video☝️
+
 
 ## Windows and Linux Terminal using Python 3.8 +
 
